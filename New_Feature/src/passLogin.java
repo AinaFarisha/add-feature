@@ -86,7 +86,7 @@ public class passLogin extends HttpServlet {
 				              + "	<br/>\r\n"
 				              + "	<br/> "
 				              + "\n" +
-				              "<input type=\"submit\" value=\"Login\"> <a href=\"forgotPassword\"> Forgot Password?</a> </form>" +
+				              "<input type=\"submit\" value=\"Login\"></form>" +
 				        "</center></body>" +
 				     "</html>"
 				  );

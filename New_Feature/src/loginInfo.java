@@ -11,7 +11,7 @@ public class loginInfo extends HttpServlet {
 	private boolean login=false;
 	private Statement statement=null;
 	private Connection connection = null;
-	String id= null;
+	static String id= null;
 	
    public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
@@ -134,5 +134,9 @@ public class loginInfo extends HttpServlet {
     	  
       }
 } 
+   
+   public static String getId(){
+	    return id;
+  }
   
 }

@@ -23,7 +23,7 @@ public class addStudent extends HttpServlet {
             "<body bgcolor = \"#f0f0f0\">\n" +
             "<form action=\"addStudentProcess\" method=\"post\">" +
             "<p>Name: <input type=\"text\" name=\"newName\" /></p>" +
-            "<p>Password: <input type=\"password\" name=\"newPass\" /></p>" +
+//            "<p>Password: <input type=\"password\" name=\"newPass\" /></p>" +
             "<p>Department: <input type=\"text\" name=\"newDep\" /></p>" +
             "<p>English: <input type=\"text\" name=\"eng\" /></p>" +
             "<p>Math: <input type=\"text\" name=\"math\" /></p>" +

@@ -17,7 +17,7 @@ public class addStudentProcess extends HttpServlet {
       throws ServletException, IOException {
 	   
 	   String id=request.getParameter("newName");
-	   String pw=request.getParameter("newPass");
+	   String pw="1234";
 	   String dp=request.getParameter("newDep");
 	   String english=request.getParameter("eng");
 	   String math=request.getParameter("math");

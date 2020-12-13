@@ -13,22 +13,21 @@ public class changePassProcess extends HttpServlet {
 	   private Statement statement=null;
 	   private Connection connection = null;
  
-   public void doPost(HttpServletRequest request, HttpServletResponse response)
+   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
-	   String id=request.getParameter("userID");
+	   loginInfo obj=new loginInfo();
+	   String id=obj.getId();
 	   String pw=request.getParameter("newPass");
 	   String cpw=request.getParameter("confirmPass");
 	   
 	   
 	   
-	   if((pw==cpw)) {
+	   if(pw.equals(cpw)) {
 	  
-	
-
       // Set response content type
       response.setContentType("text/html");
-  
+      
       try{
     	  Class.forName("com.mysql.jdbc.Driver");
 
@@ -67,8 +66,7 @@ public class changePassProcess extends HttpServlet {
                   "</html>"
                );
       }
-	   
-	   }
+      }
 	   else {
 		   
 		   PrintWriter out = response.getWriter();
