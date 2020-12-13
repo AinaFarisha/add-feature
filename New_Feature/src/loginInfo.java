@@ -11,12 +11,12 @@ public class loginInfo extends HttpServlet {
 	private boolean login=false;
 	private Statement statement=null;
 	private Connection connection = null;
-	
+	String id= null;
 	
    public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
-	   String id=request.getParameter("userID");
+	   id=request.getParameter("userID");
 	   String pw=request.getParameter("pw");
 	  
       
@@ -133,4 +133,6 @@ public class loginInfo extends HttpServlet {
     	  System.out.println("login failed!!");
     	  
       }
-} }
+} 
+  
+}
