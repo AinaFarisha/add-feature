@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" 
+    xmlns="http://java.sun.com/xml/ns/j2ee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    
+<servlet>
+   <servlet-name>Hello</servlet-name>
+   <servlet-class>loginInfo</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>Hello</servlet-name>
+   <url-pattern>/loginInfo</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>PasswordLogin</servlet-name>
+   <servlet-class>passLogin</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>PasswordLogin</servlet-name>
+   <url-pattern>/passLogin</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>signUp</servlet-name>
+   <servlet-class>signup</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>signUp</servlet-name>
+   <url-pattern>/signup</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>AddStudent</servlet-name>
+   <servlet-class>addStudent</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>AddStudent</servlet-name>
+   <url-pattern>/addStudent</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>AddStudentProcess</servlet-name>
+   <servlet-class>addStudentProcess</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>AddStudentProcess</servlet-name>
+   <url-pattern>/addStudentProcess</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>changePassword</servlet-name>
+   <servlet-class>changePassword</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>changePassword</servlet-name>
+   <url-pattern>/changePassword</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>changePassProcess</servlet-name>
+   <servlet-class>changePassProcess</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>changePassProcess</servlet-name>
+   <url-pattern>/changePassProcess</url-pattern>
+</servlet-mapping>
+
+</web-app>
