@@ -11,6 +11,8 @@ public class changePassword extends HttpServlet {
       
       // Set response content type
       response.setContentType("text/html");
+      
+      String id=request.getParameter("userID");
 
       PrintWriter out = response.getWriter();
       String title = "Change Password";
@@ -22,8 +24,9 @@ public class changePassword extends HttpServlet {
             "<head><title>" + title + "</title></head>\n" +
             "<body bgcolor = \"#f0f0f0\">\n" +
             "<form action=\"changePassProcess\" method=\"post\">" +
+            "<p>ID: <input type=\"text\" name=\"id\" readonly/>"+ id +"</p>" +
             "<p>New Password: <input type=\"password\" name=\"newPass\" /></p>" +
-            "<p>Confirm Password: <input type=\"password\" name=\"confirmPass\" /></p>" +
+            "<p>Confirm Password: <input type=\"password\" names=\"confirmPass\" /></p>" +
             "<p><button type=\"submit\">Submit</button></p>" +
             "</form>" +
             "</body>" +           

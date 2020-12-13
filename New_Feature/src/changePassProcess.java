@@ -20,7 +20,9 @@ public class changePassProcess extends HttpServlet {
 	   String pw=request.getParameter("newPass");
 	   String cpw=request.getParameter("confirmPass");
 	   
-	   if(pw.equals(cpw)) {
+	   
+	   
+	   if((pw==cpw)) {
 	  
 	
 
@@ -85,5 +87,7 @@ public class changePassProcess extends HttpServlet {
 
     
    }
+   
+ 
 }
 
