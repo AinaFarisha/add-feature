@@ -21,9 +21,12 @@ public class changePassProcess extends HttpServlet {
 	   String pw=request.getParameter("newPass");
 	   String cpw=request.getParameter("confirmPass");
 	   
-	   
+	   String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20}$";
+	   boolean validPassword = isValidPassword(pw,regex);
 	   
 	   if(pw.equals(cpw)) {
+		    
+		   if(validPassword) {
 	  
       // Set response content type
       response.setContentType("text/html");
@@ -83,9 +86,49 @@ public class changePassProcess extends HttpServlet {
 	               );
 	   }
 
-    
+	   } 
    }
    
- 
+
+private boolean isValidPassword(String password, String regex) {
+	// TODO Auto-generated method stub
+	  boolean isValid = true;
+      if (password.length() > 15 || password.length() < 8)
+      {
+              System.out.println("Password must be less than 20 and more than 8 characters in length.");
+              isValid = false;
+      }
+      String upperCaseChars = "(.*[A-Z].*)";
+      if (!password.matches(upperCaseChars ))
+      {
+              System.out.println("Password must have atleast one uppercase character");
+              isValid = false;
+      }
+      String lowerCaseChars = "(.*[a-z].*)";
+      if (!password.matches(lowerCaseChars ))
+      {
+              System.out.println("Password must have atleast one lowercase character");
+              isValid = false;
+      }
+      String numbers = "(.*[0-9].*)";
+      if (!password.matches(numbers ))
+      {
+              System.out.println("Password must have atleast one number");
+              isValid = false;
+      }
+      String specialChars = "(.*[@,#,$,%].*$)";
+      if (!password.matches(specialChars ))
+      {
+              System.out.println("Password must have atleast one special character among @#$%");
+              isValid = false;
+      }
+      return isValid; 
 }
+
+
+
+  
+}
+   
+ 
 

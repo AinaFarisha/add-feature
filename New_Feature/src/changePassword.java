@@ -9,7 +9,6 @@ public class changePassword extends HttpServlet {
    public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
-	  // String id =System.getProperty("loginInfo.id");
       
       // Set response content type
       response.setContentType("text/html");
