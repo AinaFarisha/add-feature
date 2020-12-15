@@ -72,15 +72,14 @@ public class addStudentProcess extends HttpServlet {
 	   else {
 		   
 		   PrintWriter out = response.getWriter();
-	          String title = "failed register";
+	          String title = "Fail to change password";
 	          String docType =
 	             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
 	          
 	          out.println(docType +
 	                  "<html>\n" +
 	                     "<body bgcolor = \"#f0f0f0\">\n" +
-	                      "Opps.. your Password did not match. Please try again" +
-	                        "<a href=\"javascript:history.go(-1)\">Back</a>" +
+	                      "Opps.. your Password did not match. Please try <a href=\"javascript:history.go(-1)\">again</a>." +
 	                     "</body>" +
 	                  "</html>"
 	               );

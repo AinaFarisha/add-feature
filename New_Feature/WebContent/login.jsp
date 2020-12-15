@@ -5,7 +5,7 @@
 <html>  
 <body>
  <center>
-<form action="passLogin" method = "GET">  
+<form action="passLogin" method = "POST">  
 
     <label for="id">Student ID: </label>
 	<input id="id" type="text" name="ID" value="">

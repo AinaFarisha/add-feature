@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 // Extend HttpServlet class
 public class addStudent extends HttpServlet {
  
-   public void doGet(HttpServletRequest request, HttpServletResponse response)
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
       
       // Set response content type
@@ -23,7 +23,6 @@ public class addStudent extends HttpServlet {
             "<body bgcolor = \"#f0f0f0\">\n" +
             "<form action=\"addStudentProcess\" method=\"post\">" +
             "<p>Name: <input type=\"text\" name=\"newName\" /></p>" +
-//            "<p>Password: <input type=\"password\" name=\"newPass\" /></p>" +
             "<p>Department: <input type=\"text\" name=\"newDep\" /></p>" +
             "<p>English: <input type=\"text\" name=\"eng\" /></p>" +
             "<p>Math: <input type=\"text\" name=\"math\" /></p>" +

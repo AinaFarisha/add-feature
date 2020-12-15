@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 // Extend HttpServlet class
 public class changePassword extends HttpServlet {
 	
-   public void doGet(HttpServletRequest request, HttpServletResponse response)
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
       
@@ -25,7 +25,7 @@ public class changePassword extends HttpServlet {
          "<html>\n" +
             "<head><title>" + title + "</title></head>\n" +
             "<body bgcolor = \"#f0f0f0\">\n" +
-            "<form action=\"changePassProcess\" method=\"get\">" +
+            "<form action=\"changePassProcess\" method=\"post\">" +
             "<p>ID: <input type=\"text\" name=\"id\" value='" + id +"' readonly /></p>" +
             "<p>New Password: <input type=\"password\" name=\"newPass\" /></p>" +
             "<p>Confirm Password: <input type=\"password\" name=\"confirmPass\" /></p>" +

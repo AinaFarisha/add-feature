@@ -13,7 +13,7 @@ public class loginInfo extends HttpServlet {
 	private Connection connection = null;
 	static String id= null;
 	
-   public void doGet(HttpServletRequest request, HttpServletResponse response)
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
 	   id=request.getParameter("userID");
@@ -65,7 +65,7 @@ public class loginInfo extends HttpServlet {
                       "  <li><b>Login ID</b>: "
                       + request.getParameter("userID") + "\n" +
                    "</ul>\n" +
-                   "<form action=\"changePassword\">" +
+                   "<form action=\"changePassword\" method=\"post\">" +
     	             "<input type=\"submit\" value=\"Change Password\">" +
     	             "</form>" +
                 "</body>" +
@@ -117,7 +117,7 @@ public class loginInfo extends HttpServlet {
   		  
   		 out.println(docType +
   				"</table>" +
-  	             "<form action=\"addStudent\">" +
+  	             "<form action=\"addStudent\" method=\"post\">" +
   	             "<input type=\"submit\" value=\"Add New Student\">" +
   	             "</form>" 
         		 );

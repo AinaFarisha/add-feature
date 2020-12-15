@@ -18,12 +18,16 @@ public class passLogin extends HttpServlet {
 	
 	
 	
-	  public void doGet(HttpServletRequest request, HttpServletResponse response)
+	  public void doPost(HttpServletRequest request, HttpServletResponse response)
 		      throws ServletException, IOException {
 		  
 		  String id=request.getParameter("ID");
 		  
-		  
+		  PrintWriter out = response.getWriter();
+	      String title = "Password login";
+	      String docType =
+	         "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+	         
 		  //connect to database
 	      try{
 	    	  Class.forName("com.mysql.cj.jdbc.Driver");
@@ -55,11 +59,7 @@ public class passLogin extends HttpServlet {
 	    	  
 	 
 
-		      PrintWriter out = response.getWriter();
-		      String title = "Password login";
-		      String docType =
-		         "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-		         
+		      
 		      try {
 		    	  
 		    	  statement = connection.createStatement();
@@ -75,7 +75,7 @@ public class passLogin extends HttpServlet {
 				        "<body bgcolor = \"#f0f0f0\"><center>\n" +
 				           "<h1 align = \"center\">" + title + "</h1>\n" +
 				           "\n" +
-				           "<form action=\"loginInfo\" method = \"GET\"><b>Your name</b>: "
+				           "<form action=\"loginInfo\" method = \"POST\"><b>Your name</b>: "
 				              + name + "\n <br/>\r\n"
 				              		+ "	<br/>" +
 				              "<b>User ID</b>: "
@@ -92,13 +92,13 @@ public class passLogin extends HttpServlet {
 				  );
 			
 		      } catch (SQLException e) {
-				System.out.print("failed");
+				out.print("Fail to connect to database.");
 			}
 	    	  
 	      }
 	      
 	      else {
-	    	  System.out.print("failed2");
+	    	  out.print("Fail to retrieve from database.");
 	      }
 		      
 		    

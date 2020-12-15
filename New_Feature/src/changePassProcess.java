@@ -13,13 +13,18 @@ public class changePassProcess extends HttpServlet {
 	   private Statement statement=null;
 	   private Connection connection = null;
  
-   public void doGet(HttpServletRequest request, HttpServletResponse response)
+   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	   
 	   loginInfo obj=new loginInfo();
 	   String id=obj.getId();
 	   String pw=request.getParameter("newPass");
 	   String cpw=request.getParameter("confirmPass");
+	   PrintWriter out = response.getWriter();
+      
+       String docType =
+          "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+       
 	   
 	   String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20}$";
 	   boolean validPassword = isValidPassword(pw,regex);
@@ -51,10 +56,9 @@ public class changePassProcess extends HttpServlet {
 	   
 	   
       if (login) {
-    	  PrintWriter out = response.getWriter();
+    	  
           String title = "Change Password Success";
-          String docType =
-             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+          
           
           out.println(docType +
                   "<html>\n" +
@@ -71,12 +75,21 @@ public class changePassProcess extends HttpServlet {
       }
       }
 	   else {
+		   String title = "fail to change pass";
 		   
-		   PrintWriter out = response.getWriter();
-	          String title = "fail to change pass";
-	          String docType =
-	             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-	          
+	          out.println(docType +
+	                  "<html>\n" +
+	                     "<body bgcolor = \"#f0f0f0\">\n" +
+	                      "Your password must be 8 or more character and contain uppercase, lowercase, number and special character(@,#,$,%,_). Please try <a href=\"javascript:history.go(-1)\">again</a>" +
+	                     "</body>" +
+	                  "</html>"
+	               );
+		  
+	   }
+
+	   } else {
+		   String title = "fail to change pass";
+		   
 	          out.println(docType +
 	                  "<html>\n" +
 	                     "<body bgcolor = \"#f0f0f0\">\n" +
@@ -85,8 +98,6 @@ public class changePassProcess extends HttpServlet {
 	                  "</html>"
 	               );
 	   }
-
-	   } 
    }
    
 
@@ -116,10 +127,10 @@ private boolean isValidPassword(String password, String regex) {
               System.out.println("Password must have atleast one number");
               isValid = false;
       }
-      String specialChars = "(.*[@,#,$,%].*$)";
+      String specialChars = "(.*[@,#,$,%,_].*$)";
       if (!password.matches(specialChars ))
       {
-              System.out.println("Password must have atleast one special character among @#$%");
+              System.out.println("Password must have atleast one special character among @#$%_");
               isValid = false;
       }
       return isValid; 
